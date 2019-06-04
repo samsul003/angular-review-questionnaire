@@ -1,0 +1,72 @@
+<div class="review-container">
+  <!-- review-header: start -->
+  <div class="header">
+    <h1>Bitte bewerten Sie bei angular.io</h1>
+    <img
+      class="pull-down"
+      src="/assets/images/angular.png"
+      alt="company-logo"
+    />
+  </div>
+  <!-- review-header: end -->
+
+  <!-- review-body: start -->
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()" class="review-form">
+    <div class="rating">
+      <p class="label pull-up">Service</p>
+      <rating-input formControlName="rateCount"></rating-input>
+    </div>
+    <div class="row">
+      <div class="column">
+        <label for="comment" class="label">Ihr Kommentar zur Bewertung</label>
+        <textarea
+          formControlName="comment"
+          id="comment"
+          class="control-textarea"
+          placeholder="Schildern Sie Ihre Erfahrungen und geben Sie Ihrer Bewerbung eine Persönliche Note."
+        ></textarea>
+        <div *ngIf="comment.touched && comment.invalid">
+          <div *ngIf="comment.errors.required" class="control-error">
+            Der Kommentar ist nötig!
+          </div>
+          <div *ngIf="comment.errors.maxlength" class="control-error">
+            Kommentar sollte maximal
+            {{ comment.errors.maxlength.requiredLength }} Zeichen enthalten.
+          </div>
+        </div>
+        <p class="light-text text-content pull-right">
+          Noch 400 Zeichen möglich
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <label for="email" class="label">E-Mail-Adresse</label>
+        <input formControlName="email" id="email" class="control-input" />
+        <div *ngIf="email.touched && email.invalid">
+          <div *ngIf="email.errors.required" class="control-error">
+            Die E-Mail-Adresse ist nötig!
+          </div>
+          <div
+            *ngIf="!email.errors.required && email.errors.invalidPattern"
+            class="control-error"
+          >
+            Die E-Mail-Adresse muss ein gültiges Muster sein e.g.,
+            john@skynet.com
+          </div>
+        </div>
+      </div>
+      <div class="column space-left">
+        <p class="text-content pull-down light-text">
+          Ihre E-Mail-Adresse wird selbstverständlich nicht veröffentlicht.
+          Diese wird nur benötigt, um Ihnen nach Abgabe der Bewertung eine
+          Bestätigungs-E-Mail zu schicken.
+        </p>
+      </div>
+    </div>
+    <button type="submit" class="btn" [disabled]="!form.valid">
+      Jezt Bewerten
+    </button>
+  </form>
+  <!-- review-body: end -->
+</div>

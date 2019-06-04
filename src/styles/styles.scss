@@ -1,0 +1,18 @@
+// Nomalize
+@import '~normalize.css';
+
+/* Custom styles */
+// UI-Base
+@import './ui-base/_variables';
+@import './ui-base/_mixins';
+@import './ui-base/_utils';
+@import './ui-base/_resets';
+
+// UI-Modules
+@import './ui-modules/_header';
+@import './ui-modules/_btn';
+@import './ui-modules/_form-controls';
+
+// UI-Components
+@import './ui-components/_rating-input-component';
+@import './ui-components/_review-component';

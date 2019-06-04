@@ -1,0 +1,17 @@
+// Global Resets
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Menlio', sans-serif;
+  background-color: $secondary-white;
+  height: 100%;
+  width: 100%;
+}

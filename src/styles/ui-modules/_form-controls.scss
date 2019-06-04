@@ -1,0 +1,33 @@
+.label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  @include opacity(0.7);
+}
+
+.control-textarea {
+  @include control(12rem);
+}
+
+.control-input {
+  @include control;
+}
+
+.control-textarea::placeholder,
+.control-input::placeholder {
+  font-size: 1.2 rem;
+  font-weight: 600;
+  color: $primary-black;
+  @include opacity(0.45);
+}
+
+.control-error {
+  display: block;
+  border: 1.3px solid $primary-red;
+  color: rgba($primary-red, 0.85);
+  background-color: rgba($primary-grey, 0.45);
+  font-size: 1rem;
+  padding: 8px;
+  width: 100%;
+  @include move-down(5px);
+  @include radius(9px);
+}

@@ -1,0 +1,49 @@
+// Layout Utils
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1024px;
+  transform: translate(0%, 5%);
+}
+
+.row {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.space-left {
+  @include left-margin(25px);
+}
+
+.pull-down {
+  @include move-down(22px);
+}
+
+.pull-up {
+  @include move-down(13px);
+}
+
+.pull-right {
+  @include move-aside(flex-end);
+}
+
+.pull-left {
+  @include move-aside(flex-start);
+}
+
+.light-text {
+  @include opacity(0.45);
+}
+
+.text-content {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.3;
+  font-weight: 600;
+}

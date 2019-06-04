@@ -1,0 +1,18 @@
+.btn {
+  background-color: $primary-cyan;
+  color: $primary-white;
+  border: 0;
+  @include radius(7px);
+  padding: 12px;
+  width: 48.5%;
+  height: 3.2rem;
+  margin-top: -45px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
